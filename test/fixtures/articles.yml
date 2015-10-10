@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  link: MyString
+  website: MyString
+  url: MyString
+  datetime: 2015-10-10 15:56:27
 
 two:
   title: MyString
-  link: MyString
+  website: MyString
+  url: MyString
+  datetime: 2015-10-10 15:56:27
