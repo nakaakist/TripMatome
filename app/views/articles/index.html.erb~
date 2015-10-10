@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Articles</h1>
+
+
+
+  <ul>
+    <% @articles.each do |article| %>
+    
+        <li><a href = <%= article.link %>><%= article.title %></a></li>
+      
+      
+    <% end %>
+  
+
+
+<br>
+
+
+

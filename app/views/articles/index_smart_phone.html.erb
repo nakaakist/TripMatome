@@ -1,0 +1,16 @@
+<div data-role="header">
+  <h1>Listing todos</h1>
+  </div>
+
+<div data-role="content">
+  <ul data-role="listview">
+  <% @articles.each do |article| %>
+
+        <li><a href = <%= article.link %>><%= article.title %></a></li>
+
+
+    <% end %>
+  </ul>
+</div>
+
+
