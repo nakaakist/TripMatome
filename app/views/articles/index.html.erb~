@@ -1,6 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="navber navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand header-site-title" href="#">JP sightseeing news</a>
+    </div>
+  </div>
+</div>
 
-<h1>Listing Articles</h1>
+
 
 
 

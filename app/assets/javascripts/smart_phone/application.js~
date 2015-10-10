@@ -1,4 +1,5 @@
 
+//= require smart_phone/videos
 
 # assets/javascripts/smart_phone/application.js
 = require jquery_mobile
