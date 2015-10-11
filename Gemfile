@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
+gem 'libv8', '3.16.14.3'
+gem 'therubyracer','0.12.1'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'jpmobile'
 gem 'jquery_mobile_rails'
