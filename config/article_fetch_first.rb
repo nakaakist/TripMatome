@@ -47,7 +47,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = elem.xpath('a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//div[@class="pickup_written"]')[0].text.gsub(/(\t|\n)/, '')[-10, 10]
                   p date
                   return title, url, date
                 end
@@ -60,7 +60,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = elem.xpath('.//h3[@class="title"]/a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//a[@class="post-date"]')[0].text
                   p date
                   return title, url, date
                 end
@@ -73,7 +73,15 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = 'http://en.japantravel.com' + elem.xpath('.//a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//span[@class="date visible-lg visible-xs"]').text.gsub(/(\n|\t| |)/, '')
+                  if date =~ /hoursago/
+                    days = 0
+                  elsif date = 'yesterday'
+                    days = 1
+                  elsif date =~ /daysago/
+                    days = date[0...-7].to_i
+                  end
+                  date = Date.today - days
                   p date
                   return title, url, date
                 end
@@ -89,7 +97,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                     url = 'http://us.jnto.go.jp/' + url[3..-1]
                   end
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('./td[@class="date"]')[0].text[0...-1]
                   p date
                   return title, url, date
                 end
