@@ -25,6 +25,11 @@
   </div><!-- /main -->
 </div> <!-- /container -->
 
+
+<div style="text-align:center">
+<%= paginate @articles  %>
+</div>
+
 <br>
 
 

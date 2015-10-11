@@ -33,7 +33,9 @@
     </ul>
   </div> -->
 
-<%= pagenate  @articles  %>
+<div style="text-align:center">
+<%= paginate  @articles  %>
+</div>
 
 </div>
 
