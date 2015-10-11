@@ -71,6 +71,9 @@ GEM
     jquery_mobile_rails (1.4.5)
       railties (>= 3.1.0)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -158,6 +161,7 @@ DEPENDENCIES
   jpmobile
   jquery-rails
   jquery_mobile_rails
+  kaminari
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
