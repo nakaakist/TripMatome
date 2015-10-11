@@ -1,24 +1,29 @@
-<div class="navber navbar-fixed-top">
+<div class="navber navbar-fixed-top" style="margin-bottom:100px;">
   <div class="navbar-inner">
     <div class="container">
       <a class="brand header-site-title" href="#">JP sightseeing news</a>
     </div>
   </div>
-</div>
+</div><!-- /nav -->
 
+<div class="container">
+  <div id="main" class="clearfix">
+    <table class="table">
+      <tbody>
 
-
-
-
-  <ul>
-    <% @articles.each do |article| %>
+	<% @articles.each do |article| %>
     
-        <li><a href = <%= article.link %>><%= article.title %></a></li>
-      
-      
-    <% end %>
-  
-
+        <tr>
+	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %>><%= article.title %></a></span></td>
+	  <td class="blog_title"><%= article.website %></td>  
+	</tr>
+       
+	<% end %>
+    
+      </tbody>
+    </table>
+  </div><!-- /main -->
+</div> <!-- /container -->
 
 <br>
 

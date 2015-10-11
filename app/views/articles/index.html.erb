@@ -6,21 +6,22 @@
   </div>
 </div><!-- /nav -->
 
-<div class="container">
+<div class="container" style="margin-top:100px;">
   <div id="main" class="clearfix">
+    <table class="table">
+      <tbody>
 
-
-
-
-
-  <ul>
-    <% @articles.each do |article| %>
+	<% @articles.each do |article| %>
     
-        <li><a href = <%= article.url %>><%= article.title %></a></li>
-      
-      
-    <% end %>
-  
+        <tr>
+	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %>><%= article.title %></a></span></td>
+	  <td class="blog_title"><%= article.website %></td>  
+	</tr>
+       
+	<% end %>
+    
+      </tbody>
+    </table>
   </div><!-- /main -->
 </div> <!-- /container -->
 

@@ -1,4 +1,4 @@
-<div data-role="header" data-theme = "b">
+<div data-role="header" data-theme="b">
   <h1>JP sightseeing news</h1>
 </div>
 
@@ -17,9 +17,9 @@
 
 
   <ul data-role="listview">
-  <li data-rale = "list-divider" data-theme = "a">All</li>
+  <li data-role="list-divider" data-theme="a">All</li>
   <% @articles.each do |article| %>
-        <li><a href = <%= article.link %> data-ajax="false"><h3><%= article.title %></h3><p>name of site and time stamp</p></a></li>
+        <li><a href = <%= article.url %> data-ajax="false"><h3><%= article.title %></h3><p>name of site and time stamp</p></a></li>
   <% end %>
   </ul>
 

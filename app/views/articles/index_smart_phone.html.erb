@@ -19,7 +19,7 @@
   <ul data-role="listview">
   <li data-role="list-divider" data-theme="a">All</li>
   <% @articles.each do |article| %>
-        <li><a href = <%= article.link %> data-ajax="false"><h3><%= article.title %></h3><p>name of site and time stamp</p></a></li>
+        <li><a href = <%= article.url %> data-ajax="false"><h3><%= article.title %></h3><p><%= article.website  %> <%= article.datetime  %></p></a></li>
   <% end %>
   </ul>
 
