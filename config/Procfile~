@@ -1,0 +1,1 @@
+cron: bundle exec clockwork article_fetch.rb
