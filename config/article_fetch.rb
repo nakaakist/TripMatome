@@ -11,9 +11,8 @@ require File.expand_path('../environment', __FILE__)
 def fetch_article(site_name, site_url, xpath, title_url_getter)
 
   begin
-    prev_fetched_urls = []
-    open("../tmp/#{site_name}.json") do |io|
-      prev_fetched_urls.push(JSON.load(io))
+    prev_fetched_urls = open("article_urls/#{site_name}.json") do |io|
+      JSON.load(io)
     end
   rescue => e
     puts e.message
@@ -29,16 +28,19 @@ def fetch_article(site_name, site_url, xpath, title_url_getter)
     title, url, date = title_url_getter.call(elem)
     fetched_urls.push(url)
     next if prev_fetched_urls.include?(url)
+    unless prev_fetched_urls.empty?
+      date = DateTime.now
+    end
     article = Article.new({'title'=> title, 'website'=> site_name, 'url'=> url, 'datetime'=> date})
     article.save
   end
 
-  open("../tmp/#{site_name}.json", "w") do |io|
+  open("article_urls/#{site_name}.json", "w") do |io|
     JSON.dump(fetched_urls, io)
   end
 end
 
-Clockwork::every(6.hours, 'fetch_article') do
+Clockwork::every(1.hours, 'fetch_article', :at => '**:00') do
   fetch_article('Matcha',
                 'http://mcha-jp.com',
                 '//div[@class="pickup_box"]',
@@ -47,7 +49,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = elem.xpath('a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//div[@class="pickup_written"]')[0].text.gsub(/(\t|\n)/, '')[-10, 10]
                   p date
                   return title, url, date
                 end
@@ -60,7 +62,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = elem.xpath('.//h3[@class="title"]/a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//a[@class="post-date"]')[0].text
                   p date
                   return title, url, date
                 end
@@ -73,7 +75,15 @@ Clockwork::every(6.hours, 'fetch_article') do
                   p title
                   url = 'http://en.japantravel.com' + elem.xpath('.//a')[0].attr('href')
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('.//span[@class="date visible-lg visible-xs"]').text.gsub(/(\n|\t| |)/, '')
+                  if date =~ /hoursago/
+                    days = 0
+                  elsif date = 'yesterday'
+                    days = 1
+                  elsif date =~ /daysago/
+                    days = date[0...-7].to_i
+                  end
+                  date = Date.today - days
                   p date
                   return title, url, date
                 end
@@ -89,7 +99,7 @@ Clockwork::every(6.hours, 'fetch_article') do
                     url = 'http://us.jnto.go.jp/' + url[3..-1]
                   end
                   p url
-                  date = DateTime.now
+                  date = elem.xpath('./td[@class="date"]')[0].text[0...-1]
                   p date
                   return title, url, date
                 end
