@@ -18,7 +18,3 @@
 
 # Ignore emacs backups
 *~
-
-# Ignore article urls
-/config/article_urls/*
-!.gitkeep
