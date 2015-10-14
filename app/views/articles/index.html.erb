@@ -6,7 +6,7 @@
   </div>
 </div><!-- /nav -->
 
-<div class="container" style="margin-top:100px;">
+<div class="container" style="margin-top:50px;">
   <div id="main" class="clearfix">
     <table class="table">
       <tbody>
@@ -14,7 +14,7 @@
 	<% @articles.each do |article| %>
     
         <tr>
-	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %>><%= article.title %></a></span></td>
+	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %> style="margin-left:20px;"><%= article.title %></a></span></td>
 	  <td class="blog_title"><%= article.website %></td>  
 	</tr>
        
