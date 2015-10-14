@@ -1,2 +1,8 @@
+*= require_self
+*= require common
+*= require smart_phone/layouts
+*= require smart_phone/videos
+
+
 # assets/stylesheets/smart_phone/application.css
 = require jquery_mobile
