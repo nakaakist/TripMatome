@@ -14668,3 +14668,101 @@ div.field, div.actions {
 
  */
 
+/* for smart_phone */
+
+
+.wrapper{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+#header{
+  top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #e7e7e7;
+    -webkit-transform: translate3d(0px,0,0);
+    transform: translate3d(0px,0,0);
+}
+
+#header h4{
+   text-align:center;
+}
+
+.articles ul{
+  list-style:none;
+  margin:0;
+}
+
+.articles ul li{
+  border-bottom:1px solid #e7e7e7;
+}
+
+.articles ul li a {
+  display: table;
+    table-layout: fixed;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    line-height: 0;
+    padding: 10px 15px;
+}
+
+.articles ul li a .list_thumb{
+  display: table-cell;
+    vertical-align: top;
+    width: 80px;
+}
+
+
+
+.articles ul li a .list_contents h3{
+   margin-bottom: 8px;
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.articles ul li a .list_thumb span.crop_img{
+  border-radius:2px;
+  
+}
+
+.articles ul li a .list_thumb span.img_style{
+  display: block;
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    background-color: rgb(245, 245, 245);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+
+
+.articles ul li a .list_contents .list_info .author {
+   float: left;
+    width: 45%;
+    color:#999;
+} 
+
+.articles ul li a .list_contents .list_info .views {
+  float: right;
+    min-width: 55%;
+    max-width: 55%;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#999;
+}
