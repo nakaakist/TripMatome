@@ -23,12 +23,21 @@ def fetch_article(site_name, site_url, xpath, title_url_getter)
     unless prev_fetched_urls.empty?
       date = DateTime.now
     end
-    article = Article.new({'title'=> title, 'website'=> site_name, 'url'=> url, 'datetime'=> date, 'img_url' => img_url})
+    views = rand(1..100)
+    article = Article.new({'title'=> title, 'website'=> site_name, 'url'=> url, 'datetime'=> date, 'img_url' => img_url, 'views' => views, 'views_max' => views*30})
     article.save
   end
 end
 
 Clockwork::every(1.hours, 'fetch_article', :at => '**:00') do
+  #update views
+  prev_articles = Article.all
+  prev_articles.each do |article|
+    article.views = article.views + ((-article.views + article.views_max*0.1*rand(1..20))/150.0).abs.to_i
+    article.save
+  end
+
+  #article fetch
   fetch_article('Matcha',
                 'http://mcha-jp.com',
                 '//div[@class="pickup_box"]',
