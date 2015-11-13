@@ -1,25 +1,31 @@
-<div data-role="header" data-theme="b">
+<header id="header">
   <h1>JAPAN SOKUHO</h1>
-</div>
+</header>
 
-<div data-role="content">
-
-<div data-role="collapsible" style="margin-top: -10px; margin-bottom:25px;">
-
-  <h3>category</h3>
-  <ul data-role="listviews">
-
-    <li><a href="#" data-ajax="false"><span>UNDER CONSTRUCTION</span></a></li>
-
-  </ul>
-
-</div><!-- /collapsible -->
+<div class="articles">
 
 
-  <ul data-role="listview">
-  <li data-role="list-divider" data-theme="a">All</li>
+  <ul>
+
+
+
   <% @articles.each do |article| %>
-        <li><a href = <%= article.url %> data-ajax="false"><h3><%= article.title %></h3><p><%= article.website  %> <%= article.datetime  %></p></a></li>
+        <li><a href = <%= article.url %> >
+	    <div class="list_thumb">
+
+	      <span class="crop_img img_style" style ="background-image:url(<%= article.title %>)"></span>
+	      
+	    </div>
+            
+	    <div class="list_contents"><h3><%= article.title %></h3>
+	      
+	      <div class="list_info"><p class="author"><%= article.website  %></p>
+		<p class = "views"><%= article.website  %></p>
+              </div>
+
+            </div>
+            </a>
+        </li>
   <% end %>
   </ul>
 

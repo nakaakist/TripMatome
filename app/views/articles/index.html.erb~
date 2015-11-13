@@ -14,7 +14,7 @@
 	<% @articles.each do |article| %>
     
         <tr>
-	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %>><%= article.title %></a></span></td>
+	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %> style="margin-left:20px;"><%= article.title %></a></span></td>
 	  <td class="blog_title"><%= article.website %></td>  
 	</tr>
        

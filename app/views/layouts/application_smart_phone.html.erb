@@ -1,21 +1,6 @@
 
 <!DOCTYPE html>
 
-<style>
-.ads{//広告を表示する要素
-  position:fixed;
-  bottom:60px;
-  z-index:1000001;//ここが重要
-  width:100%;
-  height:100px;
-  text-align:center;
-}
-.footer{//フッター上部に余白を作り要素の被り防止
-  margin-top:100px;
-}
- 
-//広告コードはそのままでOK。
-</style>
 <div class="ads">
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -41,23 +26,16 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
   <title>JAPAN SOKUHO</title>
- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
- <%= javascript_include_tag "ga" %>
- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <%= stylesheet_link_tag  "smart_phone/application" , :media => "all" %>
+  <%= stylesheet_link_tag  'smart_phone/application' , :media => 'all' %>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track'=> true  %>
   <%= javascript_include_tag "smart_phone/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<script language = "Javascript">
-$.mobile.ajaxEnabled = false;
-</script>
-
   
-  <div data-role="page">
+  <div class="wrapper">
 
   <%= yield %>
 

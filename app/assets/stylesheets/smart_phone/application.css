@@ -4,11 +4,6 @@
 *= require smart_phone/videos
 
 
-# assets/stylesheets/smart_phone/application.css
-= require jquery_mobile
-
-
-.ui-li-heading{
-	overflow: visible;
-	white-space: normal;
+#header{
+color:red;
 }
