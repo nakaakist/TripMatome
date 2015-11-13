@@ -29,7 +29,8 @@ def fetch_article(site_name, site_url, xpath, title_url_getter)
   end
 end
 
-Clockwork::every(1.hours, 'fetch_article', :at => '**:00') do
+#Clockwork::every(1.hours, 'fetch_article', :at => '**:00') do
+Clockwork::every(5.seconds, 'fetch_article') do
   #update views
   prev_articles = Article.all
   prev_articles.each do |article|

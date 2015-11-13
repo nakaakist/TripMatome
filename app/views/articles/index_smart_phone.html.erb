@@ -1,11 +1,27 @@
 <header id="header">
-  <h1>JAPAN SOKUHO</h1>
+  <h4 style="color:white">JAPAN SOKUHO</h4>
 </header>
+
+<div class="site_img">
+<%= image_tag 'japansokuho.png' %>
+</div>
+
 
 <div class="articles">
 
 
   <ul>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- バナー２ -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9765950708728570"
+     data-ad-slot="1952454244"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
@@ -13,14 +29,14 @@
         <li><a href = <%= article.url %> >
 	    <div class="list_thumb">
 
-	      <span class="crop_img img_style" style ="background-image:url(<%= article.title %>)"></span>
+	      <span class="crop_img img_style" style ="background-image:url(<%= article.img_url %>)"></span>
 	      
 	    </div>
             
 	    <div class="list_contents"><h3><%= article.title %></h3>
 	      
 	      <div class="list_info"><p class="author"><%= article.website  %></p>
-		<p class = "views"><%= article.website  %></p>
+		<p class = "views">views <%= article.views  %></p>
               </div>
 
             </div>
