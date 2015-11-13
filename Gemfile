@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
-gem 'libv8', '3.16.14.3'
+gem 'libv8', '3.16.14.7'
 gem 'therubyracer','0.12.1'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
