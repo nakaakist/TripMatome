@@ -1,6 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+  <meta property="fb:app_id" content="1637623839824664" />
+  <meta property="og:title" content="japansokuho: latest article" />
+  <meta property="og:type" content="website" /> 
+  <meta property="og:description" content="<%= @articles[0].title %>"  />
+  <meta property="og:url" content="http://japansokuho.herokuapp.com/" />
+  <meta property="og:image" content="<%= @articles[0].img_url%>" />
+  <meta property="og:site_name" content="japansokuho" />
+  <meta property="og:locale" content="en" />
+
+
+
   <title>JAPAN SOKUHO</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
