@@ -6,19 +6,59 @@
   </div>
 </div><!-- /nav -->
 
+<div class="site_img_pc">
+<%= image_tag 'japansokuho.png' %>
+</div>
+
+
+
 <div class="container" style="margin-top:50px;">
   <div id="main" class="clearfix">
     <table class="table">
       <tbody>
 
+<div class="articles">
+<ul>
+
+<div style="text-align:center"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"\
+></script>
+<!-- バナー２ -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9765950708728570"
+     data-ad-slot="1952454244"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+
+
 	<% @articles.each do |article| %>
     
-        <tr>
-	  <td><span class="item-title-test"><%= article.datetime  %><a href = <%= article.url %> style="margin-left:20px;"><%= article.title %></a></span></td>
-	  <td class="blog_title"><%= article.website %></td>  
-	</tr>
+       
+        <li><a href = <%= article.url %> >
+            <div class="list_thumb">
+
+              <span class="crop_img img_style" style ="background-image:url(<%= article.img_url %>)"></span>
+
+            </div>
+
+            <div class="list_contents"><h3><%= article.title %></h3>
+
+              <div class="list_info"><p class="author"><%= article.website  %></p>
+                <p class = "views">views <%= article.views  %></p>
+              </div>
+
+            </div>
+            </a>
+        </li>
+  
        
 	<% end %>
+</ul>
+</div>
+
     
       </tbody>
     </table>
